@@ -109,7 +109,7 @@ CompletionClientType = Union[Type[Completion], Type[ChatCompletion]]
 
 def _create_retry_decorator(max_retries: int) -> Callable[[Any], Any]:
     min_seconds = 4
-    max_seconds = 10
+    max_seconds = 70
     # Wait 2^x * 1 second between each retry starting with
     # 4 seconds, then up to 10 seconds, then 10 seconds afterwards
     return retry(
